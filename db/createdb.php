@@ -13,7 +13,7 @@ try {
 		animal				ENUM('perro','gato') NOT NULL DEFAULT 'perro',
 		localizacion		VARCHAR(255) NOT NULL,
 		caracteristicas 	VARCHAR(255) NOT NULL,
-		movil				VARCHAR(15) NOT NULL,
+		telefono			VARCHAR(15) NOT NULL,
 		email				VARCHAR(80) NOT NULL,
 		createdat			TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		moddat				TIMESTAMP NULL DEFAULT NULL,
