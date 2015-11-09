@@ -1,0 +1,35 @@
+/***************/
+/* MIS ESTILOS */
+/***************/
+
+header {
+
+	background-color: #63a463;
+}
+
+header img {
+	
+	display: block;
+	margin: 0 auto;
+	padding: 5px 0;
+	width: 500px;
+}
+
+footer {
+	
+	color: #FFF;
+	text-align: center;
+	background-color: #282828;
+ 	padding: 20px;
+}
+
+footer a {
+
+	color: #3aa7c7
+
+}
+
+footer a:hover {
+
+	color: #FFFFFF;
+}

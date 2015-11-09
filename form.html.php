@@ -2,11 +2,15 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Aviso SocialAnimal</title>
+	<title>SocialAnimal - Crear aviso</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="container">
+	<header>
+		<img src="assets/LogoSocialAnimal3.png" alt="Logo de la página">
+	</header>
+	<div class="container home">
 		<div class="row">
 			<div class="col-lg-offset-2 col-lg-10">
 				<div class="row">
@@ -87,6 +91,8 @@
 			</div>
 		</div>
 	 </div>
+	 	<footer>2015 - Red social dedicada a buscar y encontrar animales perdidos - <a href="">&copy;SocialAnimal</a>
+		</footer>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
 </body>
