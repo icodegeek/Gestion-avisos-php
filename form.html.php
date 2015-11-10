@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header>
-		<img src="assets/LogoSocialAnimal3.png" alt="Logo de la página">
+		<a href="<?=$base_url;?>" alt="Logo"><img src="assets/LogoSocialAnimal3.png" alt="Logo"></a>
 	</header>
 	<div class="container home">
 		<div class="row">
@@ -83,7 +83,7 @@
 							<?php endif; ?>
 						</div>
 						<div class="form-group col-xs-12 col-lg-8">
-							<button type="submit" class="btn btn-primary">Guardar aviso</button>
+							<button type="submit" class="btn btn-primary">Enviar aviso</button>
 							<a class="btn btn-default" href="<?=$base_url?>/historial/" role="button">Historial avisos</a>
 						</div>
 					</form>

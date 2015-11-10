@@ -12,7 +12,7 @@ function validar_entrada($usuario, $animal, $localizacion, $caracteristicas, $em
 		}
 
 		if (empty($animal)) {
-			$fails['animal-vacion'] = true;
+			$fails['animal-vacio'] = true;
 		}
 
 		if (empty($localizacion)) {

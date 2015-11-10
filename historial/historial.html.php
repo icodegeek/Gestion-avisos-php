@@ -6,22 +6,24 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
 	<link rel="stylesheet" href="<?=$base_url?>/css/styles.css">
 	<style>
+	
 	.buttonhome {
 		text-align: right;
 		margin-left: 262px;
 		padding: 10px;
 	}
+
 	</style>
 </head>
 <body>
 	<header>
-		<img src="<?=$base_url?>/assets/LogoSocialAnimal3.png" alt="Logo de la página">
+		<a href="<?=$base_url;?>" alt="Logo"><img src="<?=$base_url?>/assets/LogoSocialAnimal3.png" alt="Logo de la página"></a>
 	</header>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-offset-1 col-lg-10">
 				<div class="row">
-					<div class="col-lg-offset-4 col-lg-6">
+					<div class="col-lg-offset-4 col-lg-10">
 						<h1>Historial de Avisos</h1>
 					</div>
 				<?php if (!empty($avisos)) : ?>
@@ -35,12 +37,30 @@
 							<th>Características del animal</th>
 							<th>Email</th>
 							<th>Teléfono</th>
-							<th>Fecha/Hora creación aviso</th>
+							<th>Fecha/Hora creación aviso
+
+								<!-- Botones de ordenación de fecha (más o menos reciente) -->
+								
+								<?php if ($avisos > 1): ?>							
+								<div class="row">
+									<div class="col-lg-offset-6 col-lg-12">
+										<form action="?ordenew" method="post">
+											<input type="hidden" name="idaviso" value="<?=$aviso['id'];?>">
+												<button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="glyphicon glyphicon-arrow-down"></i></button>
+										</form>
+										<form action="?ordenold" method="post">
+											<input type="hidden" name="idaviso" value="<?=$aviso['id'];?>">
+												<button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="glyphicon glyphicon-arrow-up"></i></button>
+										</form>
+									</div>
+								</div>
+								<?php endif; ?>
+							</th>
 							<th>Aviso solucionado</th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php $num_aviso=1; ?>
+						<?php $num_aviso=1; ?> 
 						<?php foreach ($avisos as $aviso) : ?>
 							<tr>
 								<td><?=$num_aviso++;?></td>
@@ -69,8 +89,9 @@
 					</tbody>
 					</table>
 				</div>
-				<div class="col-lg-offset-3 col-lg-6 buttonhome">
+				<div class="col-lg-offset-3 col-lg-9 buttonhome">
 					<a class="btn btn-default" href="<?=$base_url?>" role="button">Página Principal</a>
+					<a class="btn btn-primary" href="<?=$base_url?>/solucionados/" role="button">Avisos solucionados</a>
 				</div>
 			</div>
 		</div>
