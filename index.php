@@ -11,7 +11,7 @@ function validar_entrada($usuario, $animal, $localizacion, $caracteristicas, $em
 			$fails['usuario-vacio'] = true;	
 		}
 
-		if (empty($animal)) {
+		if (empty($animal) || $animal == 'Tipo animal') {
 			$fails['animal-vacio'] = true;
 		}
 
