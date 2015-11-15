@@ -85,6 +85,7 @@
 						<div class="form-group col-xs-12 col-lg-8">
 							<button type="submit" class="btn btn-primary">Enviar aviso</button>
 							<a class="btn btn-default" href="<?=$base_url?>/historial/" role="button">Historial avisos</a>
+							<a class="btn btn-default" href="<?=$base_url?>/mapa/" role="button">Mapa de avisos</a>
 						</div>
 					</form>
 				</div>
