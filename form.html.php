@@ -43,14 +43,13 @@
 							<?php endif; ?>
 						</div>
 						<div class="form-group col-xs-12 col-lg-8">
-							<label for="localizacion">Localización:</label>
-							<input type="text" class="form-control col-lg-8" name="localizacion" placeholder="Introducir localización del animal" value="<?php if (isset($localizacion)) echo $localizacion;?>">
-							<?php if ( isset($errores['localizacion-vacio']) ) : ?>
-								<div class="alert alert-danger alert-dismissible" role="alert">
-									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									Por favor introduzca la localización del animal.
-								</div>
-							<?php endif; ?>
+						<label for="location">Localización:</label>
+							<select name="location">
+								<option>Localización:</option>
+									<?php foreach ($locations as $location): ?>
+										<option value="<?=$location['id'];?>"><?=$location['location'];?></option>
+									<?php endforeach;?>
+							</select>
 						</div>
 						<div class="form-group col-xs-12 col-lg-8">
 							<label for="caracteristicas">Características del animal:</label>

@@ -53,7 +53,7 @@
 				<form action="" method="post">
 					<div class="row">
 						<div class="form-group col-xs-12 col-lg-6">
-							<input type="text" class="form-control col-lg-8" name="location" placeholder="Introducir un Nombre de LOCALIZACIÓN">
+							<input type="text" class="form-control col-lg-8" name="location" placeholder="Introducir un nombre de localización">
 						</div>
 						<div class="form-group col-xs-12 col-lg-8">
 							<input type="text" name="latitud" placeholder="Latitud">

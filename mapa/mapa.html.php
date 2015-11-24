@@ -22,37 +22,95 @@
 function initMap() {
   var myLatLng = {lat: 37.3753501, lng: -6.0250989};
 
+  <?php 
+
+    if (!empty($latlon)) {
+
+      $place = "";  
+      foreach ($latlon as $location) {
+        
+        $place .= "var myLatLng" . $location['id_location'] . " = {lat: " . $location['lat'] . ", lng: " . $location['lon']. "};\n";
+      }
+
+        echo $place;
+      
+    }
+
+   ?>
+
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
     center: myLatLng
   });
 
-  var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">Sevilla</h1>'+
-      '<div id="bodyContent">'+
-      '<p><b>Sevilla</b>, es un sitio <b>precioso</b>, y fascinante' +
-      'en el que podemos observar un ciudad con muchos monumentos y sobre todo'+
-      'bares donde tomar una buena copa.</p>'+
-      '</div>'+
-      '</div>';
+  <?php 
 
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
+  $contentString = "";
 
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Sevilla'
-  });
+  foreach ($latlon as $location) {
+    
+  $contentString .= "var contentString".$location['id_location']." = '<div id=\"content\">"
+    .'</div>'
+    .'<h1 id="firstHeading" class="firstHeading">' .$location['location']. '</h1>'
+    .'<div id="bodyContent">'
+    .'<p><b>(' . $location['animal'] . '):</b> ' . $location['caracteristicas'] . '</p>'
+    .'</div>'
+    ."</div>';\n\n";
+  
 
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
+  }
+
+echo $contentString;
+
+
+  $infowindow = "";
+
+  foreach ($latlon as $location) {
+    
+    $infowindow .= "var infowindow".$location['id_location']." = new google.maps.InfoWindow({ content: contentString".
+    $location['id_location']." });\n";
+
+  }
+
+echo $infowindow;
+  // var infowindow = new google.maps.InfoWindow({
+  //   content: contentString
+  // });
+
+
+  $marker = "";
+
+  foreach ($latlon as $location) {
+    
+    $marker .= " var marker".$location['id_location']." = new google.maps.Marker({\n position: myLatLng".$location['id_location'].",\n map: map, \n title: '".$location['location']."'});\n";
+
+   
+
+  }
+
+echo $marker;
+    // var marker = new google.maps.Marker({
+    //     position: myLatLng,
+    //     map: map,
+    //     title: 'Sevilla'
+    //   });
+
+  $markerListeners = "";
+
+  foreach ($latlon as $location) {
+    
+    $markerListeners .= "marker".$location['id_location'].".addListener('click', function() {\n infowindow".$location['id_location'].".open(map, marker".$location['id_location'].");\n});\n";
+  
+  }
+
+  echo $markerListeners;
+  // marker.addListener('click', function() {
+  //   infowindow.open(map, marker);
+  // });
+
+
+   ?>
 }
-
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6EUlHy-IDtCx_UQ_lWjGWEQch8-7bado&signed_in=true&callback=initMap"></script>

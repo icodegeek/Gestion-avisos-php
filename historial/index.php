@@ -7,7 +7,7 @@ require_once(__ROOT__.'/db/connectdb.php');
 
 try {
 
-	$sql = 'SELECT * FROM tb_aviso WHERE moddat IS NULL ORDER BY createdat';
+	$sql = 'SELECT tb_aviso.usuario, tb_aviso.animal, tb_locations.location, tb_aviso.caracteristicas, tb_aviso.email, tb_aviso.telefono, tb_aviso.createdat FROM tb_aviso INNER JOIN tb_locations ON tb_aviso.id_location = tb_locations.id';
 	$ps = $pdo->prepare($sql);
 	$ps->execute();
 	
@@ -25,7 +25,7 @@ if (isset($_GET['ordenold'])) {
 
 	try {
 
-		$sql = 'SELECT * FROM tb_aviso WHERE moddat IS NULL ORDER BY createdat DESC';	
+		$sql = 'SELECT tb_aviso.usuario, tb_aviso.animal, tb_locations.location, tb_aviso.caracteristicas, tb_aviso.email, tb_aviso.telefono, tb_aviso.createdat FROM tb_aviso INNER JOIN tb_locations ON tb_aviso.id_location = tb_locations.id WHERE tb_aviso.moddat IS NULL ORDER BY tb_aviso.createdat DESC';	
 		$ps = $pdo->prepare($sql);
 		$ps->bindValue(':aviso_id', $aviso_id);
 		$ps->execute();

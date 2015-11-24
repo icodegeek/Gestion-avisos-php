@@ -66,7 +66,7 @@
 								<td><?=$num_aviso++;?></td>
 								<td><?=$aviso['usuario'];?></td>
 								<td><?=$aviso['animal']?></td>
-								<td><?=$aviso['localizacion']?></td>
+								<td><?=$aviso['location']?></td>
 								<td><?=$aviso['caracteristicas']?></td>
 								<td><?=$aviso['email']?></td>
 								<td><?=$aviso['telefono']?></td>
